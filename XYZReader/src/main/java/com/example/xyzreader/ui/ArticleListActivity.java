@@ -8,16 +8,18 @@ import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
@@ -40,7 +42,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final String TAG = ArticleListActivity.class.toString();
-    private Toolbar mToolbar;
+
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
 
@@ -55,10 +57,25 @@ public class ArticleListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        final ImageView imageBarLogo = (ImageView)findViewById(R.id.image_logo);
+        final AppBarLayout appBarLayout = (AppBarLayout)findViewById(R.id.appbar_layout);
 
+        ViewTreeObserver viewTreeObserver = appBarLayout.getViewTreeObserver();
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                @Override
+                public boolean onPreDraw() {
+                    if (!isConfigSet) {
+                        isConfigSet = true;
+                        imageBarLogo.setY(appBarLayout.getHeight() - imageBarLogo.getHeight());
+                        imageBarLogo.setX(appBarLayout.getWidth() / 2.0f - imageBarLogo.getWidth() / 2.0f);
+                    }
+                    return true;
+                }
 
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
+                boolean isConfigSet = false;
+            });
+        }
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 

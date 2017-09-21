@@ -9,4 +9,5 @@
 
     <string name="up">Up</string>
 
+    <string name="image_logo_behavior">com.example.xyzreader.ui.anim.ImageLogoBehavior</string>
 </resources>
