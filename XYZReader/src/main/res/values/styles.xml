@@ -31,4 +31,8 @@
         <item name="colorAccent">#5472D3</item>
     </style>
 
+    <style name="TextBook">
+        <item name="android:fontFamily">sans-serif-regular</item>
+        <item name="android:textSize">@dimen/detail_body_text_size</item>
+    </style>
 </resources>
