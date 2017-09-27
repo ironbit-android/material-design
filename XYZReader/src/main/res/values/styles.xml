@@ -25,4 +25,10 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="AppTheme" parent="Theme.Bacon">
+        <item name="colorPrimary">#0D47A1</item>
+        <item name="colorPrimaryDark">#002171</item>
+        <item name="colorAccent">#5472D3</item>
+    </style>
+
 </resources>

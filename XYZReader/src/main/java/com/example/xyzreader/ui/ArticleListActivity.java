@@ -55,6 +55,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_article_list);
 
         final ImageView imageBarLogo = (ImageView)findViewById(R.id.image_logo);
