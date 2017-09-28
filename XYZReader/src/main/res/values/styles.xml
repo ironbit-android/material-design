@@ -17,9 +17,9 @@
 
 <resources>
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#0D47A1</item>
-        <item name="colorPrimaryDark">#002171</item>
-        <item name="colorAccent">#5472D3</item>
+        <item name="colorPrimary">#3824B2</item>
+        <item name="colorPrimaryDark">#8C7AFF</item>
+        <item name="colorAccent">#B2A026</item>
     </style>
 
     <style name="TextBook">
