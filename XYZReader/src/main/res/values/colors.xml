@@ -27,4 +27,8 @@
     <color name="grey100">#F5F5F5</color>
     <color name="grey300">#E0E0E0</color>
     <color name="grey400">#BDBDBD</color>
+
+    <color name="main">#8C7AFF</color>
+    <color name="main_dark">#3824B2</color>
+    <color name="main_accent">#B2A026</color>
 </resources>
